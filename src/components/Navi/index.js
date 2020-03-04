@@ -1,37 +1,24 @@
 import React, { Component } from "react";
-import { PageHeader, Button, Descriptions } from "antd";
+import { Layout, Menu } from "antd";
+import Background from "./logo.png";
+
+const { Header } = Layout;
 export default class Navi extends Component {
   render() {
     return (
-      <PageHeader
-        ghost={false}
-        onBack={() => window.history.back()}
-        title="Title"
-        subTitle="This is a subtitle"
-        extra={[
-          <Button key="3">Operation</Button>,
-          <Button key="2">Operation</Button>,
-          <Button key="1" type="primary">
-            Primary
-          </Button>
-        ]}
-      >
-        <Descriptions size="small" column={3}>
-          <Descriptions.Item label="Created">Lili Qu</Descriptions.Item>
-          <Descriptions.Item label="Association">
-            <a>421421</a>
-          </Descriptions.Item>
-          <Descriptions.Item label="Creation Time">
-            2017-01-10
-          </Descriptions.Item>
-          <Descriptions.Item label="Effective Time">
-            2017-10-10
-          </Descriptions.Item>
-          <Descriptions.Item label="Remarks">
-            Gonghu Road, Xihu District, Hangzhou, Zhejiang, China
-          </Descriptions.Item>
-        </Descriptions>
-      </PageHeader>
+      <Header>
+        <img
+          src={Background}
+          style={{
+            width: "120px",
+            height: "31px",
+
+            margin: "16px 24px 16px 0",
+            float: "left"
+          }}
+        />
+        <Menu mode="horizontal" theme="dark" style={{ lineHeight: "64px" }} />
+      </Header>
     );
   }
 }

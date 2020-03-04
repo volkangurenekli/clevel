@@ -2,6 +2,12 @@ import React from "react";
 import { Row, Col } from "antd";
 import { Card } from "antd";
 import { List, Avatar } from "antd";
+import ReactHtmlParser, {
+  processNodes,
+  convertNodeToElement,
+  htmlparser2
+} from "react-html-parser";
+
 const { Meta } = Card;
 
 function Summary(props) {
@@ -52,7 +58,7 @@ function Summary(props) {
                 <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
               }
               title={"Summary"}
-              description={props.summary}
+              description={ReactHtmlParser(props.summary)}
             />
           </List.Item>
         </List>

@@ -6,5 +6,5 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 6rem;
+  padding: 3rem;
 `;
