@@ -5,10 +5,13 @@ import * as tvShowsActions from "../../redux/actions/tvShowsActions";
 import SearchBox from "../../components/SearchBox";
 import Card from "../../components/Card";
 import { Container } from "./style";
+import { Link } from "react-router-dom";
+
 class Home extends Component {
-  onClick = () => {
-    console.log("click");
-  };
+  onClick(item) {
+    this.props.actions.selectShow(item);
+    console.log(this.props.shows);
+  }
 
   render() {
     return (
@@ -20,7 +23,7 @@ class Home extends Component {
               key={item.show.url}
               image={item.show.image}
               name={item.show.name}
-              onClick={this.onClick}
+              onClick={() => this.onClick(item)}
             />
           ))}
         </Container>
@@ -31,14 +34,16 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return {
-    shows: state.tvShowsReducer
+    shows: state.tvShowsReducer,
+    show: state.selectShowReducer
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     actions: {
-      getShows: bindActionCreators(tvShowsActions.getShows, dispatch)
+      getShows: bindActionCreators(tvShowsActions.getShows, dispatch),
+      selectShow: bindActionCreators(tvShowsActions.selectShow, dispatch)
     }
   };
 }

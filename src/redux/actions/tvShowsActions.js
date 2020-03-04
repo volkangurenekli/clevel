@@ -5,15 +5,6 @@ export function getShowsSuccess(shows) {
   return { type: actionTypes.GET_SHOWS_SUCCESS, payload: shows };
 }
 
-// export function getShows(query) {
-//   return dispatch => {
-//     let url = `http://api.tvmaze.com/search/shows?q=${query}`;
-//     return fetch(url)
-//       .then(response => response.json())
-//       .then(result => dispatch(getShowsSuccess(result)));
-//   };
-// }
-
 export function getShows(query) {
   return async function(dispatch) {
     await axios
@@ -24,4 +15,8 @@ export function getShows(query) {
         return null;
       });
   };
+}
+
+export function selectShow(show) {
+  return { type: actionTypes.SELECT_SHOW, payload: show };
 }

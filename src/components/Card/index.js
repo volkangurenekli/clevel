@@ -3,10 +3,10 @@ import { Title, Picture, Card, Container, Img } from "./style";
 import { Link } from "react-router-dom";
 function CarD(props) {
   return (
-    <Link to={"/detail"} onClick={props.onClick}>
-      <Card>
+    <Link to={"/detail"}>
+      <Card {...props}>
         <Picture>
-          <Img src={props.image} />
+          {props.image ? <Img src={props.image.medium} /> : null}
         </Picture>
         <Title>{props.name}</Title>
       </Card>
