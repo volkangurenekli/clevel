@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "antd";
+import { Row } from "antd";
 import { Card } from "antd";
 import { List, Avatar } from "antd";
 import ReactHtmlParser from "react-html-parser";
@@ -13,10 +13,10 @@ const { Meta } = Card;
 
 function Summary(props) {
   return (
-    <Row style={{ justifyContent: "center" }}>
-      <Col span={9}>
+    <div>
+      <Row style={{ justifyContent: "center" }}>
         <Card
-          style={{ width: "8wh" }}
+          style={{ width: "300px" }}
           cover={
             <img
               alt={props.name}
@@ -30,9 +30,8 @@ function Summary(props) {
         >
           <Meta title={props.name} />
         </Card>
-      </Col>
-      <Col span={1} />
-      <Col span={14}>
+      </Row>
+      <Row>
         <List itemLayout="horizontal">
           <List.Item>
             <List.Item.Meta
@@ -49,6 +48,7 @@ function Summary(props) {
               description={props.type}
             />
           </List.Item>
+
           <List.Item>
             <List.Item.Meta
               avatar={
@@ -97,8 +97,8 @@ function Summary(props) {
             />
           </List.Item>
         </List>
-      </Col>
-    </Row>
+      </Row>
+    </div>
   );
 }
 

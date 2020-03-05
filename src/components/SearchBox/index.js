@@ -9,6 +9,7 @@ function SearchBox(props) {
       enterButton="Search"
       size="large"
       onSearch={props.onSearch}
+      style={{ padding: "0px 100px 0px 100px" }}
     />
   );
 }

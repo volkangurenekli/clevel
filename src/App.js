@@ -17,7 +17,7 @@ function App() {
         <Col span={3} />
         <Col span={18}>
           <Layout className="layout">
-            <Content style={{ padding: "150px 100px 450px 100px" }}>
+            <Content style={{ padding: "150px 0px 0px 0px" }}>
               <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/detail" component={Detail} />

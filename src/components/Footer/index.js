@@ -5,7 +5,8 @@ export default class XFooter extends Component {
     return (
       <div
         style={{
-          backgroundColor: "#3C948B"
+          backgroundColor: "#3C948B",
+          margin: "150px 0px 0px 0px"
         }}
       >
         <h3
@@ -15,7 +16,8 @@ export default class XFooter extends Component {
             display: "flex",
             justifyContent: "space-around",
             flexWrap: "wrap",
-            padding: "1rem"
+            padding: "1rem",
+            color: "#001529"
           }}
         >
           This website was made by Volkan Gürenekli using ReactJs

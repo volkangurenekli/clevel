@@ -5,7 +5,8 @@ import * as tvShowsActions from "../../redux/actions/tvShowsActions";
 import SearchBox from "../../components/SearchBox";
 import Card from "../../components/Card";
 import { Container, Text } from "./style";
-
+import { List } from "antd";
+import _ from "lodash";
 class Home extends Component {
   componentDidMount() {
     this.props.actions.getShows("Batman");
@@ -16,20 +17,38 @@ class Home extends Component {
   }
 
   render() {
+    {
+      _.chunk(this.props.shows, 3);
+    }
     return (
       <div>
         <Text>TV MAZE</Text>
         <SearchBox onSearch={value => this.props.actions.getShows(value)} />
-        <Container>
-          {this.props.shows.map(item => (
+
+        <List
+          pagination={{
+            defaultPageSize: 4,
+            position: "both"
+          }}
+          grid={{
+            gutter: 16,
+            xs: 1,
+            sm: 2,
+            md: 4,
+            lg: 4,
+            xl: 6,
+            xxl: 3
+          }}
+          dataSource={this.props.shows}
+          renderItem={item => (
             <Card
               key={item.show.url}
               image={item.show.image}
               name={item.show.name}
               onClick={() => this.onClick(item)}
             />
-          ))}
-        </Container>
+          )}
+        />
       </div>
     );
   }
