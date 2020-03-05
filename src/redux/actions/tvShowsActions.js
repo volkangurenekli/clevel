@@ -8,7 +8,7 @@ export function getShowsSuccess(shows) {
 export function getShows(query) {
   return async function(dispatch) {
     await axios
-      .get(`http://api.tvmaze.com/search/shows?q=${query}`)
+      .get(`https://api.tvmaze.com/search/shows?q=${query}`)
       .then(data => dispatch(getShowsSuccess(data.data)))
       .catch(err => {
         console.log(err);
