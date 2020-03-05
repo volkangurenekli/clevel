@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as tvShowsActions from "../../redux/actions/tvShowsActions";
-import SearchBox from "../../components/SearchBox";
-import Card from "../../components/Card";
-import { Container, Text } from "./style";
-import { List } from "antd";
-import _ from "lodash";
+import XSearchBox from "../../components/SearchBox";
+import XCard from "../../components/Card";
+import { XText } from "./style";
+import XList from "../../components/List";
+import { Layout } from "antd";
 class Home extends Component {
   componentDidMount() {
     this.props.actions.getShows("Batman");
@@ -17,31 +17,14 @@ class Home extends Component {
   }
 
   render() {
-    {
-      _.chunk(this.props.shows, 3);
-    }
     return (
-      <div>
-        <Text>TV MAZE</Text>
-        <SearchBox onSearch={value => this.props.actions.getShows(value)} />
-
-        <List
-          pagination={{
-            defaultPageSize: 4,
-            position: "both"
-          }}
-          grid={{
-            gutter: 16,
-            xs: 1,
-            sm: 2,
-            md: 4,
-            lg: 4,
-            xl: 6,
-            xxl: 3
-          }}
+      <Layout>
+        <XText>TV MAZE</XText>
+        <XSearchBox onSearch={value => this.props.actions.getShows(value)} />
+        <XList
           dataSource={this.props.shows}
           renderItem={item => (
-            <Card
+            <XCard
               key={item.show.url}
               image={item.show.image}
               name={item.show.name}
@@ -49,7 +32,7 @@ class Home extends Component {
             />
           )}
         />
-      </div>
+      </Layout>
     );
   }
 }

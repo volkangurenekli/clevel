@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Summary from "../../components/Summary";
-import Result from "../../components/Result";
+import XSummary from "../../components/Summary";
+import XResult from "../../components/Result";
+import { Layout } from "antd";
 class Detail extends Component {
   render() {
     return (
-      <div>{this.props.show.show ? this.renderShow() : this.renderEmpty()}</div>
+      <Layout>
+        {this.props.show.show ? this.renderShow() : this.renderEmpty()}
+      </Layout>
     );
   }
 
   renderEmpty() {
     return (
-      <Result
+      <XResult
         status="warning"
         title="There are some problems with your operation"
         subTitle="You must choose a TV show "
@@ -22,7 +25,7 @@ class Detail extends Component {
 
   renderShow() {
     return (
-      <Summary
+      <XSummary
         url={this.props.show.show.url}
         name={this.props.show.show.name}
         type={this.props.show.show.type}

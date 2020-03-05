@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Result from "../../components/Result";
+import XResult from "../../components/Result";
 export default class NotFound extends Component {
   render() {
     return (
-      <Result
+      <XResult
         status="404"
         title="404"
         subTitle="Sorry, the page you visited does not exist."

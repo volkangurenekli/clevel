@@ -2,6 +2,7 @@ import React from "react";
 import { Row } from "antd";
 import { Card } from "antd";
 import { List, Avatar } from "antd";
+import { Layout } from "antd";
 import ReactHtmlParser from "react-html-parser";
 import {
   StarOutlined,
@@ -11,9 +12,9 @@ import {
 } from "@ant-design/icons";
 const { Meta } = Card;
 
-function Summary(props) {
+function XSummary(props) {
   return (
-    <div>
+    <Layout>
       <Row style={{ justifyContent: "center" }}>
         <Card
           style={{ width: "300px" }}
@@ -98,8 +99,8 @@ function Summary(props) {
           </List.Item>
         </List>
       </Row>
-    </div>
+    </Layout>
   );
 }
 
-export default Summary;
+export default XSummary;
