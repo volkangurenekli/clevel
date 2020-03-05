@@ -7,16 +7,19 @@ export default class Navi extends Component {
   render() {
     return (
       <Header>
-        <img
-          src={Background}
-          style={{
-            width: "120px",
-            height: "31px",
+        <a href="/">
+          <img
+            src={Background}
+            alt="logo"
+            style={{
+              width: "120px",
+              height: "30px",
+              margin: "16px 24px 16px 0",
+              float: "left"
+            }}
+          />
+        </a>
 
-            margin: "16px 24px 16px 0",
-            float: "left"
-          }}
-        />
         <Menu mode="horizontal" theme="dark" style={{ lineHeight: "64px" }} />
       </Header>
     );

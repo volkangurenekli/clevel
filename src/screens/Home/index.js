@@ -4,18 +4,21 @@ import { bindActionCreators } from "redux";
 import * as tvShowsActions from "../../redux/actions/tvShowsActions";
 import SearchBox from "../../components/SearchBox";
 import Card from "../../components/Card";
-import { Container } from "./style";
-import { Link } from "react-router-dom";
+import { Container, Text } from "./style";
 
 class Home extends Component {
+  componentDidMount() {
+    this.props.actions.getShows("Batman");
+  }
+
   onClick(item) {
     this.props.actions.selectShow(item);
-    console.log(this.props.shows);
   }
 
   render() {
     return (
       <div>
+        <Text>TV MAZE</Text>
         <SearchBox onSearch={value => this.props.actions.getShows(value)} />
         <Container>
           {this.props.shows.map(item => (

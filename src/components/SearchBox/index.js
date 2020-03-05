@@ -5,7 +5,7 @@ const { Search } = Input;
 function SearchBox(props) {
   return (
     <Search
-      placeholder="input search text"
+      placeholder="Search TV Shows"
       enterButton="Search"
       size="large"
       onSearch={props.onSearch}

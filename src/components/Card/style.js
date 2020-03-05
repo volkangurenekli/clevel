@@ -5,8 +5,12 @@ export const Title = styled.div`
   font-family: Gadget;
   font-weight: bold;
   font-size: 30px;
-  margin-top: -80px;
-  color: black;
+  margin-top: -100px;
+  color: #f0f2f5;
+  background: #000000;
+  position: relative;
+  border-radius: 40px;
+  // text-shadow: 2px 2px 0px #ffffff, 5px 4px 0px rgba(0, 0, 0, 0.15);
 `;
 
 export const Picture = styled.div`
@@ -17,7 +21,6 @@ export const Picture = styled.div`
 
 export const Img = styled.img`
   width: 300px;
-  height: 200px;
   border-radius: 40px;
   object-fit: cover;
 `;
@@ -25,7 +28,7 @@ export const Img = styled.img`
 export const Card = styled.div` 
 margin: 30px auto;
 width: 300px;
-height: 300px;
+height: 400px;
 border-radius: 40px;
 box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
 cursor: pointer;

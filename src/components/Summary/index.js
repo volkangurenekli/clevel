@@ -2,31 +2,48 @@ import React from "react";
 import { Row, Col } from "antd";
 import { Card } from "antd";
 import { List, Avatar } from "antd";
-import ReactHtmlParser, {
-  processNodes,
-  convertNodeToElement,
-  htmlparser2
-} from "react-html-parser";
-
+import ReactHtmlParser from "react-html-parser";
+import {
+  StarOutlined,
+  IeOutlined,
+  TranslationOutlined,
+  FileTextOutlined
+} from "@ant-design/icons";
 const { Meta } = Card;
 
 function Summary(props) {
   return (
-    <Row>
-      <Col span={10}>
+    <Row style={{ justifyContent: "center" }}>
+      <Col span={9}>
         <Card
-          style={{ width: 240 }}
-          cover={<img alt={props.name} src={props.image} />}
+          style={{ width: "8wh" }}
+          cover={
+            <img
+              alt={props.name}
+              src={
+                props.image
+                  ? props.image.medium
+                  : "https://static.tvmaze.com/images/no-img/no-img-portrait-text.png"
+              }
+            />
+          }
         >
-          <Meta title={props.name} description={props.url} />
+          <Meta title={props.name} />
         </Card>
       </Col>
+      <Col span={1} />
       <Col span={14}>
         <List itemLayout="horizontal">
           <List.Item>
             <List.Item.Meta
               avatar={
-                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                <Avatar
+                  icon={<StarOutlined />}
+                  style={{
+                    color: "#ffffff",
+                    backgroundColor: "#3c948b"
+                  }}
+                />
               }
               title={"Type"}
               description={props.type}
@@ -35,7 +52,13 @@ function Summary(props) {
           <List.Item>
             <List.Item.Meta
               avatar={
-                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                <Avatar
+                  icon={<TranslationOutlined />}
+                  style={{
+                    color: "#ffffff",
+                    backgroundColor: "#3c948b"
+                  }}
+                />
               }
               title={"Language"}
               description={props.language}
@@ -44,7 +67,13 @@ function Summary(props) {
           <List.Item>
             <List.Item.Meta
               avatar={
-                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                <Avatar
+                  icon={<IeOutlined />}
+                  style={{
+                    color: "#ffffff",
+                    backgroundColor: "#3c948b"
+                  }}
+                />
               }
               title={"Official Site"}
               description={
@@ -55,7 +84,13 @@ function Summary(props) {
           <List.Item>
             <List.Item.Meta
               avatar={
-                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                <Avatar
+                  icon={<FileTextOutlined />}
+                  style={{
+                    color: "#ffffff",
+                    backgroundColor: "#3c948b"
+                  }}
+                />
               }
               title={"Summary"}
               description={ReactHtmlParser(props.summary)}

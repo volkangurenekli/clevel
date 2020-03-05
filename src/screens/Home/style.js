@@ -6,5 +6,14 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 3rem;
+  padding: 6rem;
+`;
+
+export const Text = styled.div`
+  text-align: center;
+  font-family: Gadget;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: -100px;
+  color: #001529;
 `;
